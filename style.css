@@ -1,0 +1,175 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: "Noto Sans";
+    src: url("./fonts/NotoSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: "FiraCode";
+    src: url("./fonts/FiraCode-VariableFont_wght.ttf")
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("background.png");
+    background-position: center center;
+    background-repeat: none;
+    background-size: cover;
+    overflow: hidden;
+    font-family: "Noto Sans";
+}
+
+/* 
+#taskbar {
+    width: 119rem;
+    text-align: center;
+    background-color: #1d1d28;
+    height: 3rem;
+    
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    margin-left: -59.5rem;
+    clip-path: inset(0% 100% 0% 100% round 0.5rem);
+
+}
+ */
+
+#taskbar {
+    width: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+    background-color: #1d1d28;
+    position: fixed;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    overflow: hidden;
+    transition: width 0.5s, height 0.5s, margin-left 0.5s;
+    clip-path: inset(0% 100% 0% 100% round 0.5rem);
+    display: flex;
+    flex-direction: row;
+    padding: 0.2rem;
+}
+
+#taskbar:hover {
+    width: 118rem;
+    border-radius: 0%;
+}
+
+#taskbar > img:not(:first-child) {
+    margin-left: 1rem;
+}
+
+.app-launcher {
+    margin-right: 1rem;
+}
+
+.launcher {
+    transition: filter background-color 0.3s ease;
+}
+
+.launcher:hover {
+    filter: brightness(1.3);
+    cursor: pointer;
+}
+
+.app {
+    position: absolute;
+    z-index: 0;
+    /* text-align: center; */
+    top: 20rem;
+    left: 20rem;
+    padding: 0;
+    font-size: small;
+    resize:both;
+    overflow:hidden;
+
+    visibility: none;
+    opacity: 0.0;
+    transition: opacity 0.8s;
+    display: none;
+}
+  
+.kde-appbar {
+    padding: 0.7rem;
+    margin: 1rem;
+    cursor: move;
+    z-index: 1;
+    background-color: #1a1822;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 0.5rem;
+    /* padding: 0.5rem; */
+    margin: 0;
+    /* opacity: 1.0 !important; */
+}
+
+.kde-appbar > .left {
+    height: 200%;
+}
+
+.kde-appbar > .mid {
+    cursor: default;
+}
+
+.kde-appbar > .right{
+    margin-right: 1rem;
+    fill: #cdd6f4;
+    cursor: default;
+}
+
+.kde-appbar > .right img:hover {
+    cursor: pointer;
+    filter: grayscale(100%) sepia(50%);
+}
+
+.kde-appbar > .right .close-btn:hover {
+    filter: invert();
+}
+
+#konsole {
+    width: 30rem;
+    height: 20rem;
+    color: #cdd6f4;
+    clip-path: inset(0% 100% 0% 100% round 0.5rem);
+}
+
+#konsole > .content {
+    width: 100%;
+    height: 90%;
+    color: #cdd6f4;
+    background-color: rgba(29, 29, 40, 0.9);
+    text-align: left;
+    padding: 0.3rem;
+    font-family: "FiraCode";
+    word-wrap: break-word;
+    padding-right: 1rem;
+}
+
+#konsole > .content:hover {
+    cursor: text;
+}
+
+#konsole > .content .xt-stdin {
+    opacity: 0;
+}
+
+.xt-cursor {
+    border-bottom: #cdd6f4 solid 1px;
+}
