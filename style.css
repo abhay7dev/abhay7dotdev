@@ -27,7 +27,7 @@ body {
     height: 100%;
     background-image: url("background.png");
     background-position: center center;
-    background-repeat: none;
+    /* background-repeat: none; */
     background-size: cover;
     overflow: hidden;
     font-family: "Noto Sans";
@@ -59,7 +59,9 @@ body {
     left: 0.5rem;
     overflow: hidden;
     transition: width 0.5s, height 0.5s, margin-left 0.5s;
-    clip-path: inset(0% 100% 0% 100% round 0.5rem);
+    /* clip-path: inset(0% 100% 0% 100% round 0.5rem); */
+    border-radius: 10%;
+
     display: flex;
     flex-direction: row;
     padding: 0.2rem;
@@ -67,7 +69,7 @@ body {
 
 #taskbar:hover {
     width: 118rem;
-    border-radius: 0%;
+    border-radius: 5%;
 }
 
 #taskbar > img:not(:first-child) {
@@ -79,7 +81,7 @@ body {
 }
 
 .launcher {
-    transition: filter background-color 0.3s ease;
+    transition: filter 0.3s ease;
 }
 
 .launcher:hover {
@@ -89,7 +91,7 @@ body {
 
 .app {
     position: absolute;
-    z-index: 0;
+    /* z-index: 0; */
     /* text-align: center; */
     top: 20rem;
     left: 20rem;
@@ -102,13 +104,16 @@ body {
     opacity: 0.0;
     transition: opacity 0.8s;
     display: none;
+
+
+    border-radius: 0.5rem;
 }
   
 .kde-appbar {
     padding: 0.7rem;
     margin: 1rem;
     cursor: move;
-    z-index: 1;
+    /* z-index: 1; */
     background-color: #1a1822;
     display: flex;
     flex-direction: row;
@@ -147,7 +152,8 @@ body {
     width: 30rem;
     height: 20rem;
     color: #cdd6f4;
-    clip-path: inset(0% 100% 0% 100% round 0.5rem);
+    /* clip-path: inset(0% 100% 0% 100% round 0.5rem); */
+    /* border-radius: 10%; */
 }
 
 #konsole > .content {
@@ -172,4 +178,11 @@ body {
 
 .xt-cursor {
     border-bottom: #cdd6f4 solid 1px;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
 }

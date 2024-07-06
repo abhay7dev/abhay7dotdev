@@ -12,20 +12,29 @@ export default () => {
             konsole.style.opacity = "1.0";
         }, 4);
         launcher.style["background-color"] = "#30303b";
-    });
-
-    document.querySelector("#konsole > .kde-appbar > .right .close-btn").addEventListener("click", () => {
-        console.log("hi");
-        konsole.style.visibility = "none"; 
-        konsole.style.opacity = "0.0";
-        setTimeout(() => {
-            konsole.style.display = "none";
-        }, 500);
-        launcher.style["background-color"] = "rgba(0, 0, 0, 0.0)";
+        term.clear();
+        term.writeln("Type 'help' for info on available commands");
+        term.focus();
+        ask();
     });
 
     const term = new XTerminal();
     term.mount("#konsole > .content");
+
+    const closeKonsole = () => {
+        konsole.style.visibility = "none"; 
+        konsole.style.opacity = "0.0";
+        setTimeout(() => {
+            konsole.style.display = "none";
+            konsole.style.width = "30rem";
+            konsole.style.height = "20rem";
+            konsole.style.top = "20rem";
+            konsole.style.left = "20rem";
+        }, 500);
+        launcher.style["background-color"] = "rgba(0, 0, 0, 0.0)";
+    }
+
+    document.querySelector("#konsole > .kde-appbar > .right .close-btn").addEventListener("click", closeKonsole);
 
     // prompt style
     const promptStyle = "[abhay@Installation00 ~]$ ";
@@ -35,24 +44,26 @@ export default () => {
         term.write(promptStyle);
     }
 
+    const handleInput = (inp) => {
+        if(inp == "clear") {
+            term.clear();
+        } else if(inp == "help") {
+            term.writeln(`abhay7.dev Konsole\nhelp\t- Print help menu\nwhoami\t- Print info about me\npwd\t- Print Workding Directory\nexit\t- Exit Konsole\n`);
+        } else if(inp == "whoami") {
+            term.writeln("abhay ~ Installation00\n\nHi there! I am a (mostly) self-taught developer living in the US (PST Time :)). I have a lot of interests and passions and tech is one of them. Explore the rest of this computer to learn more!\n");
+        } else if(inp == "pwd") {
+            term.writeln("/home/abhay\n");
+        } else if(inp == "exit") {
+            closeKonsole();
+        }
+
+    }
+
     // capture data event
     term.on('data', input => {
-        if (input == 'clear') {
-            // clear screen
-            term.clear();
-        } else {
-            // do something
-            term.writeln('Data: ' + input);
-        }
-        // then prompt user for more input
+        handleInput(input);
         ask();
     });
-
-    // print greeting message
-    term.writeln("Type 'help' for info on available commands");
-
-    // initiate
-    ask();
 
     document.querySelector("#konsole > .content .xt-stdin").tabIndex = "0";
 
