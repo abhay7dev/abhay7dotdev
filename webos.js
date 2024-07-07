@@ -1,4 +1,5 @@
 import konsole from "./modules/konsole.js";
+import firedragon from "./modules/firedragon.js";
 
 const setUpInteractions = () => {
     Array.from(document.querySelectorAll(".kde-appbar")).forEach((elem) => {
@@ -38,6 +39,17 @@ const setUpInteractions = () => {
 
 const setUpApps = () => {
     konsole();
+    firedragon();
+    const apps = Array.from(document.querySelectorAll(".app"));
+    window.nextZ = 1;
+    apps.forEach((a) => {
+        Array.from(a.children).forEach((c) => {
+            c.addEventListener("mousedown", (e) => {
+                a.style["z-index"] = ++nextZ;
+            }); 
+        });
+    });
+
 }
 
 export default () => {

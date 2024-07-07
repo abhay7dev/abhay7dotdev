@@ -15,6 +15,7 @@ export default () => {
         term.clear();
         term.writeln("Type 'help' for info on available commands");
         term.focus();
+        konsole.style["z-index"] = ++window.nextZ;
         ask();
     });
 
@@ -55,6 +56,8 @@ export default () => {
             term.writeln("/home/abhay\n");
         } else if(inp == "exit") {
             closeKonsole();
+        } else {
+            term.writeln("fakebash: " + inp + ": command not found\n");
         }
 
     }
