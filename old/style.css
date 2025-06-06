@@ -33,22 +33,6 @@ body {
     font-family: "Noto Sans";
 }
 
-/* 
-#taskbar {
-    width: 119rem;
-    text-align: center;
-    background-color: #1d1d28;
-    height: 3rem;
-    
-    position: absolute;
-    bottom: 0.5rem;
-    left: 50%;
-    margin-left: -59.5rem;
-    clip-path: inset(0% 100% 0% 100% round 0.5rem);
-
-}
- */
-
 #taskbar {
     width: 2.5rem;
     height: 2.5rem;
@@ -59,7 +43,6 @@ body {
     left: 0.5rem;
     overflow: hidden;
     transition: width 0.5s, height 0.5s, margin-left 0.5s;
-    /* clip-path: inset(0% 100% 0% 100% round 0.5rem); */
     border-radius: 10%;
 
     display: flex;
@@ -91,8 +74,6 @@ body {
 
 .app {
     position: absolute;
-    /* z-index: 0; */
-    /* text-align: center; */
     top: 20rem;
     left: 20rem;
     padding: 0;
@@ -108,13 +89,15 @@ body {
     z-index: 1;
 
     border-radius: 0.5rem;
+
+    transition: width 0.5s, height 0.5s;
 }
   
 .kde-appbar {
     padding: 0.7rem;
     margin: 1rem;
     cursor: grabbing;
-    /* z-index: 1; */
+    
     background-color: #1a1822;
     color: #cdd6f4;
     display: flex;
@@ -122,9 +105,8 @@ body {
     justify-content: space-between;
     width: 100%;
     height: 0.5rem;
-    /* padding: 0.5rem; */
+    
     margin: 0;
-    /* opacity: 1.0 !important; */
 }
 
 .kde-appbar > .left {
@@ -157,20 +139,26 @@ body {
     min-width: 21rem;
     min-height: 14rem;
     color: #cdd6f4;
-    /* clip-path: inset(0% 100% 0% 100% round 0.5rem); */
-    /* border-radius: 10%; */
+    background-color: rgba(29, 29, 40, 0.9);
 }
 
 #konsole > .content {
     width: 100%;
-    height: 90%;
+    height: 100%;
     color: #cdd6f4;
-    background-color: rgba(29, 29, 40, 0.9);
     text-align: left;
-    padding: 0.3rem;
+    padding: 0;
     font-family: "FiraCode";
     word-wrap: break-word;
     padding-right: 1rem;
+}
+
+
+#konsole > .content > .xt {
+
+    padding: 0.3rem;
+    width: 100%;
+    height: 100%;
 }
 
 #konsole > .content:hover {
@@ -182,16 +170,8 @@ body {
 }
 
 .xt-cursor {
-    border-bottom: #cdd6f4 solid 1px;
-    animation: blink 1.5s infinite;
+    background-color: transparent !important;
 }
-
-@keyframes blink {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
 
 #firedragon {
     width: 32rem;
@@ -227,7 +207,7 @@ body {
 }
 
 #firedragon > .search-bar > input {
-    width: 93%;
+    width: 94%;
     margin-left: 0.2rem;
     border: none;
     padding: 0.2rem;

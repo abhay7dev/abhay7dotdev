@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "Noto Sans";
+    src: url("../fonts/NotoSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: "FiraCode";
+    src: url("../fonts/FiraCode-VariableFont_wght.ttf")
+}
+
+@font-face {
+    font-family: "Barlow Condensed";
+    src: url("/fonts/BarlowCondensed-Regular.ttf");
+}

@@ -1,0 +1,87 @@
+@import url("./apps/konsole.css");
+@import url("./apps/firedragon.css");
+
+#apps {
+    width: 100%;
+    height: 100%;
+}
+
+:root {
+    --min-app-width: 48rem;
+    --min-app-height: 27rem;
+}
+
+.app {
+
+    /* Default positioning for all apps */
+    position: absolute;
+    width: var(--min-app-width);
+    height: var(--min-app-height);
+    min-width: var(--min-app-width);
+    min-height: var(--min-app-height);
+    top: 20rem;
+    left: 20rem;
+    
+    /* All apps are resizable */
+    /* resize: both;
+    overflow-y: hidden; */
+    
+    /* General App Styling */
+    color: var(--app-color);
+
+    /* Apps are hidden by default */
+    visibility: hidden;
+    opacity: 0.0;
+    transition: opacity 0.8s;
+    display: none;
+
+    z-index: 3;
+
+}
+
+.appbar {
+    cursor: grabbing;
+    
+    background-color: var(--cat-base);
+    color: var(--app-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 1.5rem;
+    min-height: 1.5rem;
+    font-size: larger;
+    position: relative;
+
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.appbar > .win-btns {
+    padding-right: 0.3rem;
+    border-radius: 1rem;
+}
+.appbar > .win-icon {
+    padding-left: 0.3rem;
+}
+.appbar > .win-title {
+    padding-top: 0.2rem;
+}
+
+.appbar > .win-btns > img:hover {
+    border-radius: 1rem;
+    cursor: pointer;
+}
+.appbar > .win-btns > img.min-btn:hover, .appbar > .win-btns > img.max-btn:hover {
+    /* filter: brightness(0) saturate(100%) invert(98%) sepia(21%) saturate(6220%) hue-rotate(178deg) brightness(101%) contrast(91%);   */
+    filter: brightness(0) saturate(100%) invert(80%) sepia(35%) saturate(2994%) hue-rotate(295deg) brightness(203%) contrast(91%);
+}
+.appbar > .win-btns > img.close-btn:hover {
+    filter: brightness(0) saturate(100%) invert(80%) sepia(35%) saturate(2994%) hue-rotate(295deg) brightness(103%) contrast(91%);
+}
+
+.app-content {
+    height: 100%;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}

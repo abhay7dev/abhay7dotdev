@@ -49,14 +49,14 @@ export default () => {
         if(inp == "clear") {
             term.clear();
         } else if(inp == "help") {
-            term.writeln(`abhay7.dev Konsole\nhelp\t- Print help menu\nwhoami\t- Print info about me\npwd\t- Print Workding Directory\nexit\t- Exit Konsole\n`);
+            term.writeln(`abhay7.dev Konsole\nhelp\t- Print help menu\nwhoami  - Print info about me\npwd\t    - Print Workding Directory\nexit\t- Exit Konsole\n`);
         } else if(inp == "whoami") {
             term.writeln("abhay ~ Installation00\n\nHi there! I am a (mostly) self-taught developer living in the US (PST Time :)). I have a lot of interests and passions and tech is one of them. Explore the rest of this computer to learn more!\n");
         } else if(inp == "pwd") {
             term.writeln("/home/abhay\n");
         } else if(inp == "exit") {
             closeKonsole();
-        } else {
+        } else if(inp.replace(/\s/g, "") != "") {
             term.writeln("fakebash: " + inp + ": command not found\n");
         }
 

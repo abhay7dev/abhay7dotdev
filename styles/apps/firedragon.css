@@ -1,0 +1,63 @@
+.firedragon > .app-content {
+    background-color: var(--xt-bg);
+    color: var(--xt-fg);
+    overflow: scroll;
+}
+
+.firedragon > .app-content > h3#projects-page-title {
+    font-family: "Barlow Condensed";
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.firedragon > .app-content > article#projects {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.firedragon > .app-content > article#projects img {
+    width: 70%;
+}
+
+.firedragon > .app-content > article#projects p {
+    margin-bottom: 2rem;
+}
+
+.firedragon > .app-content > article#projects a {
+    margin-left: 0.2rem;
+    text-decoration: none;
+    font-size: x-large;
+}
+.firedragon > .app-content > article#projects a:hover {
+    text-decoration: underline;
+}
+
+.firedragon > .app-content > .search-bar {
+    width: 100%;
+    /* padding: 0.2rem; */
+    padding-top: 0.1rem;
+    background-color: var(--cat-base);
+}
+
+.firedragon > .app-content > .search-bar > svg {
+    margin-left: 0.2rem;
+}
+
+.firedragon > .app-content > .search-bar > svg:hover {
+    filter: brightness(1.3);
+    cursor: pointer;
+}
+
+.firedragon > .app-content > .search-bar > input {
+    width: 94%;
+    margin-left: 0.2rem;
+    border: none;
+    padding: 0.2rem;
+    background-color: var(--cat-surface1);
+    color: var(--cat-fg);
+    border-radius: 0.2rem;
+}

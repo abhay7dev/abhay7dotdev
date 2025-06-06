@@ -4,7 +4,7 @@ See it for yourself at https://abhay7.dev!
 
 TODO:
 
-* Finish Konsole
-* Modularize Everything
-* Finish Everythign else
-* Accesibility 
+* Make close/max/min icons have a transition on hover
+* make taskbar icons "active" extend fully vertically
+* Finish the rest of the site in accordance with my vision
+* Push to Repo

@@ -1,0 +1,79 @@
+.konsole:hover {
+    cursor: text;
+}
+
+.konsole > .app-content {
+    background-color: var(--xt-bg);
+    opacity: 0.9;
+}
+
+span.konsole-prompt {
+    margin-right: 0.5rem;
+    background-color: var(--xt-bg);
+    border-bottom: none;
+}
+
+.lsoutput {
+    margin-right: 2rem;
+}
+
+.folder {
+    color: var(--cat-blue);
+    font-weight: bold;
+}
+
+.spinner:after {
+    animation: changeContent 0.8s linear infinite;
+    content: "⠋";
+}
+@keyframes changeContent {
+    10% { content: "⠙"; }
+    20% { content: "⠹"; }
+    30% { content: "⠸"; }
+    40% { content: "⠼"; }
+    50% { content: "⠴"; }
+    60% { content: "⠦"; }
+    70% { content: "⠧"; }
+    80% { content: "⠇"; }
+    90% { content: "⠏"; }
+}
+
+.spinner-complete:after {
+    animation: none !important;
+}
+
+.help-cmd {
+    text-shadow: 0 0 0.2rem var(--cat-green),0 0 0.7rem var(--cat-blue)
+}
+
+::selection {
+    background-color: var(--cat-subtext-opaque);
+}
+
+.viu-img {
+    margin: 1rem 1rem 1rem 1rem;
+}
+
+.xt-cursor {
+    animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.xt-stdin {
+    opacity: 0;
+}
+
+.konsole > .app-content img {
+    max-width: calc(var(--min-app-width) - 6rem);
+    max-height: calc(var(--min-app-height) - 9rem);
+    opacity: 1;
+}
+.konsole > .app-content > .xt {
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+}

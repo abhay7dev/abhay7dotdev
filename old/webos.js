@@ -49,6 +49,17 @@ const setUpApps = () => {
             }); 
         });
     });
+    const maximizeButs = Array.from(document.querySelectorAll(".max-but"));
+    maximizeButs.forEach((but) => {
+        but.addEventListener("click", (_) => {
+            const a = but.parentElement.parentElement.parentElement;
+            a.style.width = "95%";
+            a.style.height = "95%";
+            a.style.top = "1rem";
+            a.style.left = "1rem";
+            // a.style.resize = "both";
+        });
+    });
 
 }
 
