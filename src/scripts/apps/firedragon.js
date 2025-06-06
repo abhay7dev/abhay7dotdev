@@ -7,7 +7,9 @@ export default class Firedragon extends App {
     }
 
     initApp() {
-        this.appContent.innerHTML = fakefs["~/Downloads"]["files"]["projects.html"];
+        const source = document.querySelector(".preload > .projects-preload-html");
+        this.appContent.append(...source.children);
+        // this.appContent.innerHTML = fakefs["~/Downloads"]["files"]["projects.html"];
     }
 
     closeApp() {

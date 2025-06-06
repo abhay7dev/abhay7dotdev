@@ -118,7 +118,7 @@ export default class Konsole extends App {
             this.term.writeln("\nYou are listening to an LMSoundz production. Reuse allowed with proper attribution/credits");    
         }
         if(toks.length == 2 && this.fakefs[tempWd] != null && this.fakefs[tempWd].files[fileName] != null && fileName.endsWith(".mp3")) {
-            this.aud = new Audio(this.fakefs[tempWd].files[fileName]);
+            this.aud = (fileName.startsWith("LMSOUNDZ_") ? this.fakefs[tempWd].files[fileName] : new Audio(this.fakefs[tempWd].files[fileName]));
             this.aud.play();
             this.aud.addEventListener("ended", () => {
                 this.endAud();
